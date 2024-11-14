@@ -31,6 +31,5 @@ const base64 = Buffer.from(data).toString("base64");
 const decoded_data = Buffer.from(base64, "base64").toString("utf-8");
 
 // Node: hash using SHA256, Hash-Based Message Authentication Code
-const hmac = createHmac('sha256', secretKey).update(data);
-const hash = hmac.digest('hex');
+const hash = createHmac('sha256', secretKey).update(data).digest('hex');
 ```
