@@ -1,5 +1,5 @@
 ## CS472-Auth-Workshop
-Create a simple passwordless authentiation workflow for users to signup, signin, and request data from a protected route.
+Create a simple passwordless authentiation workflow for users to signin, and request data from a protected route.
 
 ## sign-in
 * client sends `{email}` to the web server
