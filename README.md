@@ -4,7 +4,7 @@ Create a simple authentiation workflow for users to signup, signin, and request 
 * client sends `{email, fullname}` to web server
 * server checks if email does not exist: save, else: error
     
-## sign in
+## sign-in
 * client sends email to the web server
 * server generates `enc_data = encode({email, fullname})`
 * server generates `hash_data = hash(enc_data, secret)`
