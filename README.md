@@ -31,3 +31,5 @@ const decoded_data = Buffer.from(base64, "base64").toString("utf-8");
 // Node: hash using SHA256, Hash-Based Message Authentication Code
 const hash_data = createHmac('sha256', secretKey).update(data).digest('hex');
 ```
+
+Discuss how to maintain state when the application refresh, or between sessions until logged out.
