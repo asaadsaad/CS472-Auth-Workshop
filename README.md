@@ -21,10 +21,10 @@ import { createHmac } from 'node:crypto';
 const secretKey = 'theo';
 const data = JSON.stringify({ email: 'asaad@miu.edu', fullname: 'Asaad Saad' });
 
-// Encode text to base64
+// encode text to base64
 const base64 = Buffer.from(data).toString("base64");
 
-// Decode base64 to text
+// decode base64 to text
 const decoded_data = Buffer.from(base64, "base64").toString("utf-8");
 
 // hash using SHA256, Hash-Based Message Authentication Code
