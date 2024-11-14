@@ -21,16 +21,13 @@ import { createHmac } from 'node:crypto';
 const secretKey = 'theo';
 const data = JSON.stringify({ email: 'asaad@miu.edu', fullname: 'Asaad Saad' });
 
-// encode text to base64
-const data_buffer = Buffer.from(data);
-const base64 = data_buffer.toString("base64");
+// Encode text to base64
+const base64 = Buffer.from(data).toString("base64");
 
-// decode base64 to text
-const base64_buffer = Buffer.from(base64, "base64");
-const decoded_data = base64_buffer.toString("utf-8");
+// Decode base64 to text
+const decoded_data = Buffer.from(base64, "base64").toString("utf-8");
 
 // hash using SHA256, Hash-Based Message Authentication Code
-const hmac = createHmac('sha256', secretKey);
-hmac.update(data);
+const hmac = createHmac('sha256', secretKey).update(data);
 const hash = hmac.digest('hex');
 ```
