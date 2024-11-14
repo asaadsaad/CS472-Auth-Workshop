@@ -1,15 +1,13 @@
 ## CS472-Auth-Workshop
-Create a simple authentiation workflow for users to signup, signin, and request data from a protected route.
-## sign-up
-* client sends `{email, fullname}` to web server
-* server checks if email does not exist: save, else: error
-    
+Create a simple passwordless authentiation workflow for users to signup, signin, and request data from a protected route.
+
 ## sign-in
 * client sends `{email}` to the web server
+* server checks if email does not exist, ask for `{fullname}`
 * server checks if email exist:
   * server generates `enc_data = encode({email, fullname})`
   * server generates `hash_data = hash(enc_data, secret)`
-  * server sends both `{enc_data, hash_data}` to client
+  * server sends both `{enc_data, hash_data}` to client's email
 
 ## workflow
 * client saves `{enc_data, hash_data}` and is expected to send them with every future request header to server
