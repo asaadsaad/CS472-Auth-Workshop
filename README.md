@@ -6,7 +6,7 @@ Create a simple passwordless authentiation workflow for users to signup, signin,
 * server checks if email does not exist, ask for `{fullname}`, and save: `{email, fullname}` combination
 * server checks if email exist:
   * server generates `enc_data = encode({email, fullname})`, read about [base64](https://stackoverflow.com/questions/201479/what-is-base-64-encoding-used-for)
-  * server generates `hash_data = hash(enc_data, secret)`
+  * server generates `hash_data = hash(enc_data, secret)`, secret is kept at server, so only server can recreate the hash
   * server sends both `{enc_data, hash_data}` to client's email
 
 ## workflow
